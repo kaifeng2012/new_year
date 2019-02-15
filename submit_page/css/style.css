@@ -1,0 +1,647 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    /*-webkit-appearance: none; //ȥ��������Ĭ����ʽ*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "΢���ź�";
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a img {
+    border: none;
+    width: 102px;
+    height: 128px;
+    margin-top: 3px;
+}
+
+.top {
+    display: inline-block;
+    width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.no_border {
+    border: 0 !important;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/*��ҳ*/
+
+.nav {
+    overflow: hidden;
+    background-color: #CCCCCC;
+    border-right: 0px solid #5c676d;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+
+.nav li, .nav1 li, .nav2 li {
+    float: left;
+    border-right: 1px solid #999999;
+    width: 33.3%;
+    text-align: center;
+}
+
+ul .nav > li > a {
+    color: #000;
+    font-size: 18px;
+    line-height: 38px;
+    display: block;
+    padding: 5px 15px;
+}
+
+/*ѧУ*/
+.text-left {
+    padding-left: 10px;
+    width: 100%;
+    line-height: 60px;
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+}
+
+/*ѧУ����������ɫ*/
+.text-left .school-name {
+    color: #00B47D;
+}
+
+/*li�󸡶�*/
+.lf li {
+    display: inline-block;
+}
+
+.photo1 {
+    margin-left: 21px;
+}
+
+/*�ϴ�ͼƬ*/
+.file {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.file-picture {
+    border: 1px solid #ddd;
+}
+
+/*�ϴ�ͼƬ�Ĵ�С*/
+.file-picture {
+    width: 102px;
+    height: 128px;
+    /*margin: auto;*/
+    margin-top: 22px;
+    margin-left: 15px;
+    margin-bottom: 14px;
+    background: #fff;
+}
+
+.file-picture img {
+    width: 102px;
+    height: 128px;
+}
+
+/*�ϴ�ͼƬ*/
+.pic {
+    float: left;
+    margin-left: 181px;
+    margin-bottom: -60px;
+    margin-top: -79px;
+}
+
+/*�ϴ�ͼƬ�������ϴ��ı�*/
+.new-contentarea label {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 0 10px;
+    /*border: 1px solid #00B47D;*/
+    /*background:#00B47D;*/
+    color: #fff;
+    font-weight: normal;
+}
+
+.new-contentarea input[type=file] {
+    width: 188px;
+    height: 60px;
+    background: #333;
+    margin: 0 auto;
+    position: absolute;
+    right: 50%;
+    margin-right: -94px;
+    top: 0;
+    right /*\**/: 0px \9;
+    margin-right /*\**/: 0px \9;
+    width /*\**/: 10px \9;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 2;
+}
+
+/*�����ϴ����ϴ���Ƭ����ȥ�»���*/
+.upload-img:focus, .upload-img:hover {
+    color: #23527c;
+    text-decoration: none;
+}
+
+/*�Ա�*/
+.genders input, .accommodations input {
+    width: 80px;
+    height: 33px;
+    border: 1px solid #BCBCBC;
+    line-height: 30px;
+    background-color: #fff;
+    border-radius:5px;
+}
+
+.accommodations > input:first-child {
+    background-color: #00B47D;
+    color: #fff;
+    border:0;
+}
+
+.genders > input:first-child {
+    background-color: #00B47D;
+    color: #fff;
+    border:0;
+}
+
+/*�Ա���Ů����ɫ*/
+.text-left > .genders > input:focus, .text-left > .genders > input:hover {
+    background-color: #00B47D;
+    color: #fff;
+}
+
+/*��֤�������߾�*/
+.code {
+    margin-bottom: 24px;
+}
+
+/*60s���»�ȡ��֤��*/
+.again-code {
+    position: absolute;
+    right: 31%;
+    width: 5%;
+}
+
+/*60s���»�ȡ��֤���ı���ɫ���ڱ߾ࡢ������ɫ*/
+.again-code .btn {
+    /* background: #AEAEAE;
+    padding: 3px 3px;
+    color: #fff; */
+    background:#00B47D;
+	padding: 3px 3px;
+	color: #fff;
+	height:30px;	
+	width:100px;
+}
+
+/*����60s���»�ȡ��֤�밴ťʱ��������ɫ���߿���ɫ*/
+.again-code .btn.active.focus, .again-code .btn.active:focus, .again-code .btn.focus, .again-code .btn:active.focus, .again-code .btn:active:focus, .again-code .btn:focus {
+    outline: none outline-offset : - 2 px;
+    color: #fff;
+}
+
+/*��ͨi��Уҵ��*/
+.start-service {
+    border-bottom: 0px solid #ddd;
+    margin-left: 27px;
+    margin-bottom: 7px;
+    /*position: relative;*/
+    top: 16px;
+}
+
+/*��ͨҵ��˵��*/
+.txt {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+    /*color: #949494;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #5EBF9F;
+
+}
+
+.txt span, .txt p {
+    font-size: 12px;
+    color: #5EBF9F;
+}
+
+/*��������*/
+.try-free {
+    margin-left: 35px;
+    line-height: 24px;
+}
+
+.picture {
+    margin-left: 17px;
+    float: left;
+}
+
+/*��ͨҵ���������߿�*/
+.details-picture {
+    width: 94%;
+    background: rgba(219, 241, 235, 0.5);
+}
+
+/*��ͨi��Уҵ������*/
+.details-txt {
+    /*display:none;*/
+    /*width:94%;*/
+    margin-top: 20px;
+    padding: 10px 0;
+    border: 3px solid #5EBF9F;
+
+}
+
+/**/
+/*�ύ��Ϣ*/
+.submit-information input {
+    margin-top: 10px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 110px;
+    width: 87%;
+    border-radius: 5px;
+    background: #00B47D;
+    color: #fff;
+    font-size:16px;
+    text-align: center;
+}
+
+/*������ѧ������*/
+.student-name {
+    /*color: #FF0000;*/
+    font-size: 16px;
+    text-align: center;
+}
+
+/*ס�ޣ��߶���ס�ޱ���ɫ*/
+.text-left > .accommodations > input:focus, .text-left > .accommodations > input:hover {
+    background-color: #00B47D;
+    color: #fff;
+}
+
+.details-picture img {
+    vertical-align: middle;
+    margin-top: -43px;
+    margin-left: 176px;
+}
+
+/*i��Уҵ�������߶�*/
+.details-picture {
+    height: auto;
+}
+
+/***********��������ҳ��*********/
+/*����*/
+.nation-list {
+    color: #A9A9A9;
+}
+
+/*�־�ס��*/
+.address {
+    height: 104px;
+    /*line-height:100px;*/
+}
+
+/*ѡ��ʡ�������߾�*/
+#seachprov {
+    margin-right: -12px;
+}
+
+/*ѡ��ʡ�ݡ��У��ϡ������߾�*/
+.now-address-menu {
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 16px;
+}
+
+/*��ϸ��ַ*/
+.detailAddress {
+    border: 1px solid #ddd;
+    height: 33px;
+    line-height: 33px;
+    position: absolute;
+    left: -2px;
+    /* bottom: 10px; */
+    top: 51px;
+    padding-left: 5px;
+    width: 100%;
+    color: #333;
+    outline: none;
+}
+
+/*�ύ��Ϣ��ť��λ*/
+.navbar-fixed-bottom {
+    bottom: 20px;
+}
+
+/********��Ϣ�ύ�ɹ�ҳ��********/
+/*��Ϣ�ύ�ɹ�ͼ��*/
+.text-center dt {
+    margin: 25px 0 25px 0;
+}
+
+dt > img {
+    width: 25%;
+}
+
+.text-center dt dd {
+    color: #00B47D;
+}
+
+.info-submitted-success {
+    color: #11CD6E;
+}
+
+/*��Ҫ��ʾ�߿����ȼ���ɫ���������ڱ߾ࡢ�����߾�*/
+.text-center > .import-notice {
+    border: 1px solid #FF0000;
+    text-align: left;
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+/*��Ϣ�ύ�ɹ��ı���ɫ*/
+.import-notice p, .import-notice p span {
+    color: #FF0000;
+}
+
+.import-notice > p:nth-child(2) {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+/**********��Ϣ�ύʧ��**********/
+/*��Ϣ�ύʧ���ı���ɫ*/
+.info-submitted-defeat {
+    color: #FF0000;
+}
+
+.submit-information:focus, .submit-information:hover {
+    color: transparent;
+    text-decoration: none;
+}
+
+/**********������֪**************/
+/***���ಿ��***/
+
+
+/*����������*/
+#register-notes .aside-left .line {
+    padding:15px 0;
+    margin-bottom: -10px;
+    border-left: 2px solid #63C19F;
+    margin-left: 100px;
+}
+
+.aside-left li span {
+    display: inline-block;
+    margin-bottom: -4px;
+    width: 100px;
+    height: 32px;
+    border-right: 2px solid #63C19F;
+}
+
+/***�Ҳಿ��***/
+.aside-right {
+    margin-left: 57px;
+    margin-top: 16px;
+}
+
+/*����ʱ�䡢�������󡢱�����ַ�����������ύ����*/
+.registration-time, .enrollment-target, .registration-address, .registration-material {
+    border: 2px solid #63C19F;
+    border-radius: 5px;
+    width: 87%;
+    padding: 10px;
+    line-height: 28px;
+    /*margin-bottom: 10px;*/
+}
+
+/*����ʱ��*/
+.registration-time {
+    margin-left: 21px;
+    position: relative;
+    top: 32px;
+    word-break:break-all;
+}
+
+/*��������*/
+.enrollment-target {
+    margin-left: 21px;
+    position: relative;
+}
+
+/*������ַ*/
+.registration-address {
+    margin-left: 21px;
+    position: relative;
+    top: -61px;
+}
+
+/*���������ύ����*/
+.registration-material {
+    margin-left: 21px;
+    position: relative;
+    top: -121px;
+}
+
+/*����ʱ�䡢������ַ��ͼ��*/
+.registration-time img, .registration-address img {
+    position: absolute;
+    top: 38%;
+    left: -41px;
+}
+
+/*�������󡢱��������ύ���ϵ�ͼ��*/
+.enrollment-target img, .registration-material img {
+    position: absolute;
+    top: 50%;
+    left: -41px;
+}
+
+/*����ʱ�䡢�������󡢱�����ַ�����������ύ���ϱ���*/
+.registration-time h3, .enrollment-target h3, .registration-address h3, .registration-material h3 {
+    font-size: 21px;
+    color: #63C19F;
+    margin-bottom: 7px;
+}
+
+/*����ʱ�䡢�������󡢱�����ַ�����������ύ�����ı�*/
+.registration-time p, .enrollment-target p, .registration-address p, .registration-material p {
+    font-size: 14px;
+}
+
+/**********��������**************/
+
+/***���ಿ��***/
+.aside-left {
+    margin-left: -67px;
+/*     float: left; */
+}
+
+.aside-left li span {
+    display: inline-block;
+    margin-bottom: -5px;
+    width: 100px;
+    height: 32px;
+    border-right: 2px solid #434E4A;
+}
+
+/*����ԲȦ��ԲȦ�е��ı�*/
+.aside-left li i {
+    display: inline-block;
+    margin-left: 84px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #434E4A;
+    border-radius: 50%;
+    font-style: normal;
+    text-align: center;
+    line-height: 26px;
+    color: #E0750D;
+    /*font-weight:bold;*/
+    font-size: 20px;
+    background: #fff;
+}
+
+/***�Ҳಿ��***/
+.aside-right {
+    margin-left: 57px;
+    margin-top: 24px;
+}
+
+/*�ѧ����Ϣ����ѯ�ְ���������ȡ������Ʒ�������߶�֤���ַ���ѵ��Ʒ*/
+.student-info, .divide-classes-list, .living-goods, .day-pass, .military-training-goods {
+    border: 2px solid #434E4A;
+    border-radius: 5px;
+    width: 87%;
+    padding: 10px;    
+/*     margin-bottom: 20px; */
+/*     margin-left: 21px; */
+    line-height:28px;
+}
+
+/*�ѧ����Ϣ*/
+.student-info {
+	margin-left: 21px;
+    position: relative;
+    top: 32px;
+}
+
+/*��ѯ�ְ�����*/
+.divide-classes-list {
+    position: relative;
+    top: 71px;
+}
+
+/*��ȡ������Ʒ*/
+.living-goods {
+    position: relative;
+    top: 89px;
+}
+
+/*�����߶�֤*/
+.day-pass {
+    position: relative;
+    top: 107px;
+}
+
+/*�ѧ����Ϣ����ѯ�ְ���������ȡ������Ʒ�������߶�֤���ַ���ѵ��Ʒ��������*/
+#register-process .aside-left .line {
+    border-left: 2px solid #434E4A;;
+    margin-left: 100px;
+	padding-top: 15px;
+}
+
+/*�ַ���ѵ��Ʒ*/
+.military-training-goods {
+    margin-left: 21px;
+    position: relative;
+    top: 126px;
+}
+
+/*��ȡ������Ʒ�������߶�֤���ַ���ѵ��ƷԲȦ����*/
+.thing, .pass, .goods {
+    position: absolute;
+    top: 36%;
+    left: -123px;
+    z-index: 10;
+}
+
+/*�ѧ����Ϣ*/
+.info {
+    position: absolute;
+    top: 22%;
+    left: -123px;
+}
+
+/*��ѯ�ְ�����*/
+.list {
+    position: absolute;
+    top: 29%;
+    left: -123px;
+}
+
+/*********ģ̬��**********/
+#myModal .modal-content {
+    position: fixed;
+    left: 0;
+    right: 0;
+   /* top:186px;*/
+    width: 91%;
+    margin: 145px  auto;
+}
+
+.modal-body p {
+    color: red;
+    /*text-align:center;*/
+}
+
+/*���������ұ߱߿���ɫ*/
+#register-process .registration-time{
+    border: 2px solid #434E4A;
+}
+
+
+
+
+

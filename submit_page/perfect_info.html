@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>信息采集</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <!-- 兼容IE浏览器 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 兼容高速浏览模式 -->
+    <meta name="renderer" content="webkit">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../bootstrap/js/html5shiv.min.js"></script>
+    <script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <!--Bootstrap的插件文件 -->
+    <script src="../bootstrap/js/jquery-1.11.3.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- 民族插件-->
+    <link href="../css/plugin/nationality/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../js/plugin/nationality/zepto.js"></script>
+    <!-- 籍贯插件-->
+    <!-- 户口所在地-->
+    <link rel="stylesheet" href="../css/plugin/native_place/cityPicker.css">
+    <!-- 出生日期-->
+    <!-- <script src="../js/plugin/date_picker/jquery.1.7.2.min.js"></script>
+    <script src="../js/plugin/date_picker/mobiscroll_002.js" type="text/javascript"></script>
+    <script src="../js/plugin/date_picker/mobiscroll_004.js" type="text/javascript"></script>
+    <link href="../css/plugin/date_picker/mobiscroll_002.css" rel="stylesheet" type="text/css">
+    <link href="../css/plugin/date_picker/mobiscroll.css" rel="stylesheet" type="text/css">
+    <script src="../js/plugin/date_picker/mobiscroll.js" type="text/javascript"></script>
+    <script src="../js/plugin/date_picker/mobiscroll_003.js" type="text/javascript"></script>
+    <script src="../js/plugin/date_picker/mobiscroll_005.js" type="text/javascript"></script>
+    <link href="../css/plugin/date_picker/mobiscroll_003.css" rel="stylesheet" type="text/css"> -->
+    <!--籍贯插件-->
+    <script src="../js/plugin/native_place/cityPicker.js"></script>
+    <!-- 引入开发css-->
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/perfect_info.css">
+
+</head>
+<body>
+<!--头部-->
+<img src="../images/u2.png" class="img-responsive top">
+<!--内容开始-->
+<div class="content">
+    <!--学校 -->
+    <form action="" id="myForm" method="get">
+        <ul class="text-left lf">
+            <li class="school" style="margin-left: 14px;">学校</li>
+            <li class="school-name"></li> 
+        </ul>
+        <!--姓名-->
+        <ul class="text-left lf">
+            <li class="name" style="margin-left: 14px;">姓名</li>
+            <li class="input-student-name">
+            	<input id="studentName" readonly="readonly" type="text"/>
+<!--             	<input name="studentName" type="text" placeholder="输入学生姓名"/> -->
+            </li>
+        </ul>
+        <!-- 民族-->
+        <ul class="text-left lf nation0">
+            <li class="nation"><img src="../images/star.png"/>民族</li>
+            <li class="nationality">
+                <div class="loan_jm1">
+                    <div class="loan_jm_l1">
+                        <span class="wbk_srn select_show select_gr" id="gr_zone_ids" data-id="1"><input
+                                type="text" placeholder="汉族" style="margin-top: -17px;margin-left:1px;" name="nationality"/></span><b></b>
+                    </div>
+                </div>
+                <div class="nation1" style="z-index: 9999; ">
+                    <div class="city1" id="nation">
+                        <div class="city-list"><span class="city-letter" id="A1" style="margin-top: 47px;">A</span>
+                            <p data-id="32" id="Achang" style="border-bottom:0;">阿昌族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="B1" style="margin-top: 41px;">B</span>
+                            <p data-id="13">白族</p>
+
+                            <p data-id="40">保安族</p>
+
+                            <p data-id="28">布朗族</p>
+
+                            <p data-id="9">布依族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="C1">C</span>
+
+                            <p data-id="2">藏族</p>
+
+                            <p data-id="5">朝鲜族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="D1">D</span>
+
+                            <p data-id="52">达斡尔族</p>
+
+                            <p data-id="17">傣族</p>
+
+                            <p data-id="39">德昂族</p>
+
+                            <p data-id="22">东乡族</p>
+
+                            <p data-id="11">侗族</p>
+
+                            <p data-id="44">独龙族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="E1">E</span>
+
+                            <p data-id="37">俄罗斯族</p>
+
+                            <p data-id="45">鄂伦春族</p>
+
+                            <p data-id="38">鄂温克族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="G1">G</span>
+
+                            <p data-id="20">高山族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="H1">H</span>
+
+                            <p data-id="15">哈尼族</p>
+
+                            <p data-id="16">哈萨克族</p>
+
+                            <p data-id="1">汉族</p>
+
+                            <p data-id="46">赫哲族</p>
+
+                            <p data-id="10">回族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="J1">J</span>
+
+                            <p data-id="49">基诺族</p>
+
+                            <p data-id="42">京族</p>
+
+                            <p data-id="24">景颇族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="K1">K</span>
+
+                            <p data-id="25">柯尔克孜族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="L1">L</span>
+
+                            <p data-id="53">拉祜族</p>
+
+                            <p data-id="18">黎族</p>
+
+                            <p data-id="48">珞巴族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="M1">M</span>
+
+                            <p data-id="3">满族</p>
+
+                            <p data-id="30">毛南族</p>
+                            <p data-id="47">门巴族</p>
+
+                            <p data-id="4">蒙古族</p>
+
+                            <p data-id="7">苗族</p>
+
+                            <p data-id="51">仫佬族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="N1">N</span>
+
+                            <p data-id="23">纳西族</p>
+
+                            <p data-id="35">怒族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="P1">P</span>
+
+                            <p data-id="33">普米族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="Q1">Q</span>
+
+                            <p data-id="27">羌族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="S1">S</span>
+
+                            <p data-id="29">撒拉族</p>
+
+                            <p data-id="54">畲族</p>
+
+                            <p data-id="21">水族</p>
+
+                            <p data-id="55">僳僳族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="T1">T</span>
+
+                            <p data-id="34">塔吉克族</p>
+
+                            <p data-id="43">塔塔尔族</p>
+
+                            <p data-id="14">土家族</p>
+
+                            <p data-id="26">土族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="W1">W</span>
+
+                            <p data-id="19">佤族</p>
+
+                            <p data-id="6">维吾尔族</p>
+
+                            <p data-id="36">乌孜别克族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="X1">X</span>
+
+                            <p data-id="31">锡伯族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="Y1">Y</span>
+
+                            <p data-id="12">瑶族</p>
+
+                            <p data-id="56">彝族</p>
+
+                            <p data-id="50">仡佬族</p>
+
+                            <p data-id="41">裕固族</p>
+                        </div>
+                        <div class="city-list"><span class="city-letter" id="Z1">Z</span>
+
+                            <p data-id="8">壮族</p>
+                        </div>
+                    </div>
+                    <div class="letter">
+                        <ul>
+                            <li><a href="javascript:;">A</a></li>
+                            <li><a href="javascript:;">B</a></li>
+                            <li><a href="javascript:;">C</a></li>
+                            <li><a href="javascript:;">D</a></li>
+                            <li><a href="javascript:;">E</a></li>
+                            <li><a href="javascript:;">G</a></li>
+                            <li><a href="javascript:;">H</a></li>
+                            <li><a href="javascript:;">J</a></li>
+                            <li><a href="javascript:;">K</a></li>
+                            <li><a href="javascript:;">L</a></li>
+                            <li><a href="javascript:;">M</a></li>
+                            <li><a href="javascript:;">N</a></li>
+                            <li><a href="javascript:;">P</a></li>
+                            <li><a href="javascript:;">Q</a></li>
+                            <li><a href="javascript:;">S</a></li>
+                            <li><a href="javascript:;">T</a></li>
+                            <li><a href="javascript:;">W</a></li>
+                            <li><a href="javascript:;">X</a></li>
+                            <li><a href="javascript:;">Y</a></li>
+                            <li><a href="javascript:;">Z</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- 籍贯-->
+        <ul class="text-left lf">
+            <li class="native-place"><img src="../images/star.png"/>籍贯</li>
+            <li class="native-place"><input type="text" class="city" readonly placeholder="选择籍贯"/></li>
+        </ul>
+        <!-- 出生日期-->
+        <ul class="text-left lf">
+            <li class="birthday" style="margin-left: 14px;"><!-- <img src="../images/star.png"/> -->出生日期</li>
+            <li class="demos">
+            	<input class="" readonly="readonly" name="appDate" id="appDate" type="text"/>
+                <!-- <label for="appDate" style="display:none;">日期</label>
+                <input class="" readonly="readonly" name="appDate" id="appDate" type="text" placeholder="选择日期"> -->
+            </li>
+        </ul>
+        <!-- 户口所在地-->
+        <!-- <ul class="text-left lf ">
+            <li class="residence"><img src="../images/star.png"/>户口所在地</li>
+            <li><input type="text" class="city1" readonly placeholder="选择地址"/></li>
+        </ul> -->
+        <!-- 现居住地-->
+        <ul class="text-left lf address">
+            <li class="now-address"><img src="../images/star.png"/>现居住地</li>
+            <li class="now-address-menu">
+                <input type="text" class="city2" readonly placeholder="选择地址"/>
+                <input name="detailAddress" placeholder="详细地址" class="detailAddress"/>
+            </li>
+        </ul>
+        <!-- 监护人电话1-->
+        <ul class="text-left lf">
+            <li class="guardian" style="margin-left: 14px;">监护人电话1</li>
+            <li class="cell-phone-number"><input type="text" type="tel" name="phoneNumber1" placeholder="输入手机号码"/></li>
+        </ul>
+        <!-- 监护人电话2-->
+        <ul class="text-left lf" style="margin-bottom: 10px;">
+            <li class="guardian" style="margin-left: 14px;">监护人电话2</li>
+            <li class="cell-phone-number"><input type="text" type="tel" name="phoneNumber2" placeholder="输入手机号码"/></li>
+        </ul>
+        <!--验证-->
+        <div class="student-name"></div>
+        <!--提交信息-->
+        <div class="text-center">
+            <a href="javascript:" class="submit-information"><input type="button" value="提交信息" name="phoneNumber" id="submit-info1" class="btn" data-toggle="modal" data-target="#myModal"/></a>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                            <h5 class="modal-title" id="myModalLabel" style="text-align:center;">提示信息</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>信息提交后无法修改，请确认无误</p>
+                            <p style="margin-left: -193px;">后提交</p>
+                        </div>
+                        <div class="modal-footer" style="text-align:center;">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="confirm-submit1">确认提交</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="padding: 6px 26px;">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--内容结束-->
+    </form>
+</div>
+
+<script src="../js/new_year/new_year.js"></script>
+<script src="../js/new_year/plugins.js"></script>
+<script src="../js/common/common.js"></script>
+<script>
+	var ctx = getContextPath();
+	//获取参数
+	//var studentId = getArgs("s");
+	var studentId = localStorage.studentId;
+	//根据学生id获取相关信息
+	$.ajax({
+			url:ctx+"/student/getStudentById.do",
+			type:"post",
+			data:{"studentId": studentId},
+			dataType:"text",
+			success:function(data){
+				var result = eval("(" + data + ")");//转换为json对象
+				if (result.result == 200){
+					$(".school-name").html("【"+result.schoolName+"】");  //显示学校名称
+					$("#studentName").val(result.studentName); //显示学生姓名
+					$("#appDate").val(result.birthday); //显示出生日期				
+				}else {
+					alert(result.message);
+					$("#submit-info1").hide(); //隐藏提交按钮
+				}
+			}
+		});
+	
+</script>
+
+</body>
+</html>

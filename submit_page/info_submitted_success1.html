@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>信息提交成功</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 兼容IE浏览器 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 兼容高速浏览模式 -->
+    <meta name="renderer" content="webkit">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入开发css-->
+    <link href="../submit_page/css/style.css" type="text/css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <!--[if lt IE 9]>
+    <script src="../bootstrap/js/html5shiv.min.js"></script>
+    <script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部-->
+<img src="../images/u2.png" class="img-responsive top">
+<!--主内容开始-->
+<div class="content">
+    <form action="" id="myForm">
+        <!--信息提交成功图标 -->
+        <dl class="text-center">
+            <dt><img src="../images/u58.png"/></dt>
+            <dd>信息提交成功</dd>
+        </dl>
+        <!--其他家长都安装了：-->
+        <div class="text-left" style="border:0;">
+            <p style="margin-left: 19px;margin-top: 9px;color: #949494;">其他家长都安装了“i家校客户端”：</p>
+        </div>
+        <div class="text-center">
+            <a class="submit-information"><input type="button" value="下载客户端" id="submit-info"/></a>
+        </div>
+    </form>
+</div>
+<!--内容结束-->
+
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<!--Bootstrap的插件文件 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/new_year/new_year.js"></script>
+<script>
+	$("#submit-info").click(function () {
+		window.location.href = 'http://app.967111.com/';
+	});
+</script>
+</body>
+</html>

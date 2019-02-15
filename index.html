@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>信息采集</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 兼容IE浏览器 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 兼容高速浏览模式 -->
+    <meta name="renderer" content="webkit">
+    <!-- 引入开发css-->
+    <link href="submit_page/css/style.css" type="text/css" rel="stylesheet"/>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <!--[if lt IE 9]>
+    <script src="bootstrap/js/html5shiv.min.js"></script>
+    <script src="bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        /*按钮获取焦点时*/
+        .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+            outline: thin;
+            outline: 0px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+        /*底部导航*/
+        .nav{
+            height: 41px;
+        }
+    </style>
+</head>
+<body>
+<!--信息采集-->
+<div class="info-collect">
+<!--头部-->
+<img src="images/u2.png" class="img-responsive top">
+<!--内容开始-->
+<div class="content">
+    <form action="" id="myForm">
+        <ul class="text-center  file">
+            <!-- 拍照上传-->
+            <li class="new-contentarea">
+                <!-- <a href="javascript:void(0)" class="upload-img">
+                    <label for="upload-file" id="upload-pic"><img src="images/pic.png" alt=""/></label>
+                </a>
+                <input type="file" class="" name="upload-file" id="upload-file" accept="image/*"/> -->
+                <a href="javascript:void(0)" class="upload-img">
+					<label for="upload-file">
+						<img src="images/pic.png" alt=""  id="img" name="img" />
+					</label>
+				</a>
+				<input id="upload-file" class="form-control" type="file" accept="image/*" name="upload-file">
+            </li>
+        </ul>
+        <!--学校 -->
+        <ul class="text-left lf">
+            <li class="school"><img src="images/star.png"/>学校<input type="hidden" id="schoolId" /></li>
+            <li class="school-name"></li>
+        </ul>
+        <!--姓名-->
+        <ul class="text-left lf">
+            <li class="name"><img src="images/star.png"/>姓名</li>
+            <li class="input-student-name"><input name="studentName" type="text" placeholder="输入学生姓名"/></li>
+        </ul>
+        <!--性别-->
+        <ul class="text-left lf">
+            <li class="gender"><img src="images/star.png"/>性别</li>
+            <li class="genders"><input name="gender" type="button" value="男" id="man"/><input name="gender"
+                                                                                              type="button"
+                                                                                              value="女" id="woman"/><input type="hidden" id="gender" value="男"/>
+            </li>
+        </ul>
+        <!--住宿-->
+        <ul class="text-left lf">
+            <li class="accommodation"><img src="images/star.png"/>住宿</li>
+            <li class="accommodations"><input name="accommodation" type="button" value="住校" id="in-residence"/><input
+                    type="button"
+                    value="走读"
+                    name="accommodation" id="extern"/><input type="hidden" id="isDorm" value="住校"/>
+            </li>
+        </ul>
+        <!--身份证号-->
+        <ul class="text-left lf">
+            <li class="ID-number"><img src="images/star.png"/>身份证号</li>
+            <li class="ID-number"><input name="idNumber" placeholder="输入身份证号"/></li>
+        </ul>
+        <!--手机号-->
+        <ul class="text-left lf">
+            <li class="cell-phone-number"><img src="images/star.png"/>手机号</li>
+            <li class="cell-phone-number"><input name="telNumber" type="tel" placeholder="输入家长手机号码(河南移动)" id="mobile"/></li>
+        </ul>
+        <!--验证码-->
+        <ul class="text-left lf code">
+            <li class="verification-code"><img src="images/star.png"/>验证码</li>
+            <li class="verification-code"><input id="noteCode" name="noteCode" type="tel" placeholder="输入短信验证码"/></li>
+            <li class="again-code">
+                <!-- <button type="button" class="btn" id="btnsms">获取验证码</button> -->
+                <input type="button" class="btn" id="btnsms" value="获取验证码"/>
+            </li>
+        </ul>
+        <!--开通i家校业务-->
+        <div class="start-service">
+            <p class="school"><input type="checkbox" name="checkbox" checked="checked"/><span>&nbsp;同时开通"i家校业务"</span></p>
+            <div class="details-picture">
+                <!--<img src="images/que.png" alt=""/>-->
+                <div class="details-txt">
+                	<p class="txt" id="productFee"></p>
+	                <div class="txt">
+		                <span>包含：开通后可以收到孩子出入校短信通知，</span>		
+		                <p class="try-free">免费试用i家</p>
+	                </div>
+                </div>
+            </div>
+        </div>
+        <!--验证-->
+        <div class="student-name"></div>
+        <!--提交信息-->
+        <div class="text-center">
+                <a href="javascript:" class="submit-information">
+                	<input type="button" value="提交信息" id="submit-info" class="btn" data-toggle="modal" data-target="#myModal"/>
+                </a>
+               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h5 class="modal-title" id="myModalLabel" style="text-align:center;">提示信息</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>信息提交后无法修改，请确认无误</p>
+
+                                <p style="margin-left: -193px;">后提交</p>
+                            </div>
+                           <div class="modal-footer" style="text-align:center;">
+                                <button type="button" class="btn btn-primary" id="confirm-submit">确认提交</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"
+                                        style="padding: 6px 26px;">取消
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--内容结束-->
+    </form>
+</div>
+</div>
+<!--报到须知-->
+<div id="register-notes" class="info-collect" style="display:none;">
+    <!--头部-->
+    <img src="images/baodaoxuzhi-1.png" class="img-responsive top" >
+    <!--内容开始-->
+    <div class="content">
+        <ul class="aside-left" id="xzContent">            
+            <!-- <li class="line">
+                <div >
+                    <h3>报名时间：</h3>
+                    <p>6月14号-18号，每天8:00-18:00</p>
+                    <img src="images/baomingshijian.png" alt=""/>                    
+                </div>
+            </li>
+            <li class="line">
+                <div >
+                    <h3>招生对象：</h3>
+                    <p>原则上接受有郑州市内九区小学学籍或户籍，有综合素质报告手册的小学毕业生自愿报名</p>
+                    <img src="images/zhaoshengduixaing.png" alt=""/>                    
+                </div>
+            </li> -->
+		</ul>
+    </div>
+</div>
+<!--报到流程-->
+<div id="register-process" class="info-collect" style="display:none;">
+    <!--头部-->
+    <img src="images/baodaoliucheng-1.png" class="img-responsive top">
+    <!--内容开始-->
+    <div class="content">
+        <ul class="aside-left" id="lcContent">
+            <!-- <li class="line" >
+                <div class="registration-time">
+                    <p>8月8日前，填报学生信息</p>
+                    <p class="info" style=""><i>1</i></p>
+                </div>
+            </li>
+            <li class="line" >
+                <div class="registration-time">
+                    <p>8月11日查询分班名单</p>
+                    <p class="info"><i>2</i></p>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+</div>
+<!--底部nav-->
+<ul class="nav" id="menu">
+    <li class="active" ><a href="javascript:;">信息采集</a></li>
+    <li class="registration-notice"><a href="javascript:;" >报到须知</a></li>
+    <li class="registration-process"><a class="red" href="javascript:;">报到流程</a></li>
+</ul>
+<script src="js/plugin/mobileBUGFix.mini.js"></script>
+<script src="bootstrap/js/jquery-1.11.3.js"></script>
+<!--Bootstrap的插件文件 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/new_year/new_year.js"></script>
+<script src="js/common/common.js"></script>
+<script>
+	var ctx = getContextPath();
+	var isHnTel=false;
+	//获取参数
+	var schoolId = getArgs("schoolId");
+	
+	//参数存储
+	window.localStorage.setItem("schoolId",schoolId);
+	$("#schoolId").val(schoolId);
+	
+	//查询学校名称
+	$(document).ready(function(){
+		$.ajax({
+			url:ctx+"/student/getSchoolById.do",
+			type:"post",
+			data:{"schoolId": schoolId},
+			dataType:"text",
+			success:function(data){
+				var result = eval("(" + data + ")");//转换为json对象
+				if (result.result == 200){
+					$(".school-name").html("【"+result.schoolName+"】");  //显示学校名称
+					$("#productFee").html("资费："+result.productFee+"元/月");
+					//$("#submit-info").show();
+					//$("#submit-info").removeAttr("disabled"); //提交按钮可用
+					validateProcess();//验证是否有报到须知和流程
+				}else {
+					alert(result.message);
+					$("#myForm").hide();
+					$("#menu").hide();
+					//$("#submit-info").hide();
+					//$("#submit-info").attr({"disabled":"disabled"}); //提交按钮不可用
+				}
+			}
+		});
+	});
+
+	/**
+	 * 报到须知、报到流程，是否有数据
+	 */
+	function validateProcess(){
+		$.ajax({
+			url:ctx+"/student/validateProcess.do",
+			type:"post",
+			data:{"schoolId": schoolId},
+			dataType:"text",
+			success:function(data){
+				var result = eval("(" + data + ")");//转换为json对象
+				if (result.result == 200){
+					if (result.notice == "0" && result.process == "0"){
+						//没有报到须知和流程
+						$("#menu").hide();//菜单隐藏
+					}else if(result.notice == "0" && result.process == "1"){
+						//没有报到须知
+						$("#menu .registration-notice").hide();//隐藏须知
+						$(".nav li").css({
+					        "float":"left","border":"0px solid #999999","width":"49.9%","text-align":"center"
+					    });
+						getLc();//获取报到流程内容
+					}else if(result.notice == "1" && result.process == "0"){
+						//没有报到流程
+						$("#menu .registration-process").hide();//隐藏流程
+						$(".nav li").css({
+					        "float":"left","border":"0px solid #999999","width":"49.9%","text-align":"center"
+					    });
+						getXz();//获取报到须知内容
+					}else{
+						getXz();//获取报到须知内容
+						getLc();//获取报到流程内容
+					}
+				}
+			}
+		});
+	}	
+
+	//获取报到须知内容
+	function getXz(){
+		$.ajax({
+			url:ctx+"/student/getSchoolNotice.do",
+			type:"post",
+			data:{"schoolId": schoolId, type:13},
+			dataType:"text",
+			success:function(data){
+				var result = eval("(" + data + ")");//转换为json对象
+				if (result.result == 200){
+					var con = eval(result.content);
+					var htmlStr = "";
+					for(var i = 0 ; i < con.length ; i ++){
+						htmlStr = "<li class=\"line\">";
+						htmlStr += "    <div>";
+// 						htmlStr += "    <div class=\"registration-time\">";
+						htmlStr += "        <h3>"+con[i]["title"]+"</h3>";
+						htmlStr += "        <p>"+con[i]["content"]+"</p>";
+						
+						if(con[i]["title"].indexOf("时间")>=0){
+							htmlStr +="        <img src=\"images/baomingshijian.png\" alt=\"\"/>";
+						}else if(con[i]["title"].indexOf("地址")>=0 || con[i]["title"].indexOf("地点")>=0){
+							htmlStr +="        <img src=\"images/baomingdizhi.png\" alt=\"\"/>";
+						}else if(con[i]["title"].indexOf("对象")>=0 || con[i]["title"].indexOf("人")>=0){
+							htmlStr +="        <img src=\"images/zhaoshengduixaing.png\" alt=\"\"/>";
+						}else {
+							htmlStr +="        <img src=\"images/baomingcailiao.png\" alt=\"\"/>";
+						}						
+						htmlStr += "    </div>";
+						htmlStr += "</li>";
+						
+						//追加须知
+						$("#xzContent").append(htmlStr);
+					}
+					$("#xzContent li div").attr("class","registration-time");
+				}
+			}
+		});
+	}
+	
+	//获取报到流程内容
+	function getLc(){
+		$.ajax({
+			url:ctx+"/student/getSchoolNotice.do",
+			type:"post",
+			data:{"schoolId": schoolId, type:14},
+			dataType:"text",
+			success:function(data){
+				var result = eval("(" + data + ")");//转换为json对象
+				if (result.result == 200){
+					var con = eval(result.content);
+					var htmlStr = "";
+					for(var i = 0 ; i < con.length ; i ++){
+						htmlStr ="<li class=\"line\">";
+						htmlStr+="    <div>";
+// 						htmlStr+="    <div class=\"registration-time\">";
+						htmlStr+="        <p>" + con[i]["content"] + "</p>";
+						htmlStr+="        <p class=\"info\"><i>"+(i+1)+"</i></p>";
+						htmlStr+="    </div>";
+						htmlStr+="</li>";
+						$("#lcContent").append(htmlStr);					
+					}
+					$("#lcContent li div").attr("class","registration-time");
+				}
+			}
+		});
+	}
+	
+	//触发获取验证码按钮
+	$("#btnsms").click(function() {
+		time(this);
+	});
+	var wait = 60;
+	var ctime = null;
+	function time(o) {
+		//验证手机号
+		var tel = $("#mobile").val();
+		if(tel == "" && wait == 60) {
+			$(".student-name").html("请填写手机号").css("color", "red");
+			$("#mobile").focus();
+			return;
+		}
+		if((!tel.match(/^[0-9]{11}$/)) && wait == 60) {
+			$(".student-name").html("请输入正确的手机号码").css("color", "red");
+			$("#mobile").focus();
+			return;
+		}
+		/*
+		//不能用，每间隔一秒都要访问服务器判断是否是河南手机号
+		isHnMobile(tel);		
+		if(!isHnTel){
+			$(".student-name").html("手机号必须是河南移动").css("color", "red");
+			$("#mobile").focus();
+			return;
+		} 
+		*/
+		if(wait == 0 || (wait != 60 && tel == "")) {
+			//显示【获取验证码】按钮
+			o.removeAttribute("disabled"); 
+			o.value="获取验证码";
+			o.style.backgroundColor = "#00B47D"; //爱家校蓝
+			o.style.borderColor = "#00B47D"; //爱家校蓝
+			wait = 60;
+		} else {
+			//显示【重新获取】按钮
+			o.setAttribute("disabled", true); //按钮不可用
+			o.value="(" + wait + "s)重新获取";
+			o.style.backgroundColor="#AEAEAE"; //背景置为灰色
+			o.style.borderColor="#AEAEAE"; //背景置为灰色
+			wait--;
+			ctime = setTimeout(function() {
+					time(o)
+				},
+				1000)
+		}
+		//发送验证码
+		if(wait == 58) {
+			var telNum = $('#mobile').val();
+			$.ajax({
+				url: ctx+"/sms.do",
+				type: "post",
+				data: {
+					telNum: telNum
+				},
+				success: function(data) {
+				}
+			});
+		}
+	}
+	
+	//验证是否是河南移动
+	function isHnMobile(telNum){
+		$.ajax({
+			url: ctx+"/isHnMobile.do",
+			type: "post",
+	     	async:false, 
+			data: {
+				telNum: telNum
+			},
+			success: function(data) {
+				var ajaxobj=eval(data);				
+	     		if(ajaxobj.result == 200){
+	     			isHnTel=true;
+	     		}else{
+	     			isHnTel=false;
+	     		}
+			}
+		});
+	}
+
+</script>
+</body>
+</html>
+

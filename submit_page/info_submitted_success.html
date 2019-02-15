@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>信息提交成功</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 兼容IE浏览器 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 兼容高速浏览模式 -->
+    <meta name="renderer" content="webkit">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入开发css-->
+    <link rel="stylesheet" href="../css/common.css">
+    <link href="../submit_page/css/style.css" type="text/css" rel="stylesheet"/>
+
+    <!--[if lt IE 9]>
+    <script src="../bootstrap/js/html5shiv.min.js"></script>
+    <script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部-->
+<img src="../images/u2.png" class="img-responsive top">
+<!--主内容开始-->
+<div class="content">
+    <form action="" id="myForm">
+        <!--信息提交成功图标 -->
+        <dl class="text-center">
+            <dt><img src="../images/u58.png"/></dt>
+            <dd class="info-submitted-success">信息提交成功</dd>
+        </dl>
+        <!--重要提示-->
+        <div class="text-center">
+            <div class="import-notice">
+                <p>重要提示：</p>
+
+                <p><span style="margin-left:32px;">稍后您将收到河南移动下发的业务开通确认</span>短信，请回复“是”完成业务开通！如未收到短信请联系客服电话967111</p>
+            </div>
+        </div>
+        <!--你还可以：-->
+        <div class="text-left" style="border:0;">
+            <p style="margin-left:15px;color: #949494;">您还可以：</p>
+        </div>
+        <div class="text-center">
+            <a  class="submit-information"><input type="button" value="继续完善信息"
+                                                                          id="submit-info"/></a>
+        </div>
+    </form>
+</div>
+<!--内容结束-->
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<!--Bootstrap的插件文件 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/common/common.js"></script>
+<script>
+   var isShow= localStorage.isKaiBusiness;
+   if(isShow=="true"){
+	   
+		$(".text-center > .import-notice").css("display","block");
+	}else{
+	    $(".text-center > .import-notice").css("display","none");
+	}
+	$("#submit-info").click(function () {
+		window.location.href = 'perfect_info.html';
+	// 	var studentId = getArgs("s");
+	// 	window.location.href = 'perfect_info.html?s='+encodeURIComponent(studentId);
+	});
+</script>
+</body>
+</html>
